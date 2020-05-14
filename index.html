@@ -3,11 +3,25 @@
 <head>
  <title>Colorful Circles</title>
  <script type="text/javascript" src="paper-full.js"></script>
- <link type="text/css" href="style.css">
+ <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.3/howler.core.min.js"></script>
+ <link rel="stylesheet" type="text/css" href="style.css">
  <script type="text/paperscript" canvas="myCanvas">
+    let circles = [];
     function onKeyDown(event) {
-    let myCircle = new Path.Circle(new Point(100, 70), 50);
-    myCircle.fillColor = 'orange';   
+        <!-- make random  -->
+        let maxPoint = new Point(view.size.width,view.size.height);
+        let randomPoint = Point.random();
+        let point = maxPoint * randomPoint;    
+        let myCircle = new Path.Circle(point, 500); 
+        myCircle.fillColor = "orange";
+        circles.push(myCircle);
+    }
+    function onFrame(event) {
+        for(let i = 0 ; i < circles.length ; i++){
+            circles[i].fillColor.hue += 1;
+            circles[i].scale(0.9);
+        }
+
     }
 </script>
 </head>
