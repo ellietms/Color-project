@@ -2,11 +2,16 @@
 <html>
 <head>
  <title>Colorful Circles</title>
+ <script type="text/javascript" src="paper-full.js"></script>
+ <link type="text/css" href="style.css">
+ <script type="text/paperscript" canvas="myCanvas">
+    function onKeyDown(event) {
+    let myCircle = new Path.Circle(new Point(100, 70), 50);
+    myCircle.fillColor = 'orange';   
+    }
+</script>
 </head>
 <body>
-
-
-
-
+    <canvas id="myCanvas" resize></canvas>
 </body>
 </html>
