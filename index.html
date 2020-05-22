@@ -13,13 +13,10 @@ function onKeyDown(event) {
    var randomPoint = Point.random();
 <!-- making random new points  by using max point and * it 's coordinate to random numbers' -->
    var point = maxPoint * randomPoint;
-   var newCircle = new Path.Circle(point,10);
-   newCircle.fillColor = "orange";
+   var newCircle = new Path.Circle(point,500);
+   newCircle.fillColor = "pink";
    circles.push(newCircle);
 }
-
-var animatedCircle = new Path.Circle(new Point(300,300), 100);
-animatedCircle.fillColor = "red";
 
 function onFrame(event) {
     for(var i=0;i < circles.length ;i++){
