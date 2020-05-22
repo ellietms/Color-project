@@ -11,25 +11,25 @@ var keyData = {
 		sound: new Howl({
         src:['sounds/bubbles.mp3', 'sound.mp3']
 		}),
-		color: '#eb5b34'
+		color: '#ff0000'
 	},
 	w:{
 		sound: new Howl({
         src: ['sounds/clay.mp3', 'sound.mp3'] 
 		}),
-		color: '#ebc334'
+		color: '#575b91'
     },
     e:{
         sound: new Howl({
         src: ['sounds/confetti.mp3', 'sound.mp3']     
         }),
-        color: '#74eb34'
+        color: '#91577b'
     },
     r:{
         sound: new Howl({
         src: ['sounds/corona.mp3', 'sound.mp3']
         }),
-        color: '#eb34dc'
+        color: '#976cbd'
     },
     t:{
         sound: new Howl({
@@ -53,7 +53,7 @@ var keyData = {
         sound: new Howl({
         src: ['sounds/flash-3.mp3', 'sound.mp3']        
         }),
-        color: '#27ae60'
+        color: '#ed9aba'
     },
     o:{
         sound: new Howl({
@@ -65,13 +65,13 @@ var keyData = {
         sound: new Howl({
         src: ['sounds/moon.mp3', 'sound.mp3']    
         }),
-        color: '#2c3e50'
+        color: '#8a3641'
     },
     a:{
         sound: new Howl({
         src: ['sounds/pinwheel.mp3', 'sound.mp3']    
         }),
-        color: '#f10f0f'
+        color: '#b8ad1c'
     },
     s:{
         sound: new Howl({
@@ -95,7 +95,7 @@ var keyData = {
         sound: new Howl({
         src: ['sounds/prism-2.mp3', 'sound.mp3']   
         }),
-        color: '#5f7d19'
+        color: '#c94f65'
     },
     h:{
         sound: new Howl({
@@ -119,13 +119,13 @@ var keyData = {
         sound: new Howl({
         src: ['sounds/strike.mp3', 'sound.mp3']    
         }),
-        color: ''
+        color: '#524f75'
     },
     z:{
         sound: new Howl({
         src: ['sounds/suspension.mp3', 'sound.mp3']    
         }),
-        color: '#9b59b6'
+        color: '#8f1329'
     },
     x:{
         sound: new Howl({
@@ -149,7 +149,7 @@ var keyData = {
         sound: new Howl({
         src: ['sounds/wipe.mp3', 'sound.mp3']   
         }),
-        color: '#5a8796'
+        color: '#e3ed53'
     },
     n:{
         sound: new Howl({
@@ -195,7 +195,13 @@ for(var i=0;i < circles.length ;i++){
 
 </script>
 </head>
-<body>
-    <canvas id="myCanvas" resize></canvas>
+<body onload="myFunction()"> 
+<script>
+        function myFunction() {
+          alert("Welcome,Try to play your music with pressing keyword keys,Have Fun!!");
+        }
+</script> 
+    <canvas id="myCanvas" resize>
+    </canvas>   
 </body>
 </html>
