@@ -1,28 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
- <title>Colorful Circles</title>
- <script type="text/javascript" src="paper-full.js"></script>
- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/howler/1.1.28/howler.js"></script>
- <link rel="stylesheet" type="text/css" href="style.css">
+<title>Colorful Circles</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+<script type="text/javascript" src="./paper-full.js"></script>
 <script type="text/paperscript" canvas="myCanvas">
-    let circles = [];
-    function onKeyDown(event) {
-        <!-- make random  -->
-        let maxPoint = new Point(view.size.width,view.size.height);
-        let randomPoint = Point.random();
-        let point = maxPoint * randomPoint;    
-        let myCircle = new Path.Circle(point, 500); 
-        myCircle.fillColor = "orange";
-        circles.push(myCircle);
-    }
-    function onFrame(event) {
-        for(let i = 0 ; i < circles.length ; i++){
-            circles[i].fillColor.hue += 1;
-            circles[i].scale(0.9);
-        }
+    var circles = [];
+function onKeyDown(event) {
+<!-- making new points with view height and view width -->
+   var maxPoint = new Point(view.size.width,view.size.height);
+<!-- making random points for x and y between 0-1 -->
+   var randomPoint = Point.random();
+<!-- making random new points  by using max point and * it 's coordinate to random numbers' -->
+   var point = maxPoint * randomPoint;
+   var newCircle = new Path.Circle(point,10);
+   newCircle.fillColor = "orange";
+   circles.push(newCircle);
+}
 
-    }
+var animatedCircle = new Path.Circle(new Point(300,300), 100);
+animatedCircle.fillColor = "red";
+
+function onFrame(event) {
+    for(var i=0;i < circles.length ;i++){
+    circles[i].fillColor.hue += 1;
+    circles[i].scale(0.9);
+}
+    animatedCircle.fillColor.hue += 1;
+}
+
+
+
 </script>
 </head>
 <body>
